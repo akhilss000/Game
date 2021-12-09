@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game</title>
+	<style>
+	
+		button{
+			padding:40px;
+			font-size:30px;
+			color: white;
+			background-color:rgb(243, 225, 174);
+			border-radius: 50px;
+			transition: .5s;
+		}
+		button:hover{
+			background-color: rgb(255, 176, 139);
+		}
+		.play{
+			padding:10px
+		}
+	
+	</style>
+</head>
+<body>
+	<center>
+		<table>
+			<tr>
+				<td><button id="btn1" onclick="action1()"></button></td>
+				<td><button id="btn2" onclick="action2()"></button></td>
+				<td><button id="btn3" onclick="action3()"></button></td>
+			</tr>
+			<tr>
+				<td><button id="btn4" onclick="action4()"></button></td>
+				<td><button id="btn5" onclick="action5()"></button></td>
+				<td><button id="btn6" onclick="action6()"></button></td>
+			</tr>
+			<tr>
+				<td><button id="btn7" onclick="action7()"></button></td>
+				<td><button id="btn8" onclick="action8()"></button></td>
+				<td><button id="btn9" onclick="action9()"></button></td>
+			</tr>
+		</table>
+	</center>
+	
+	
+	<script>
+		var player=1;
+		var arr=[];	
+			
+		function action1(){
+			if(player==1){
+				document.getElementById("btn1").innerText="X";
+				document.getElementById("btn1").style.backgroundColor="red";
+				player=0;
+			}
+			else if(player==0){
+				document.getElementById("btn1").innerText="O";
+				document.getElementById("btn1").style.backgroundColor="blue";
+				player=1;
+			}
+			play(player,1);
+		}
+		function action2(){
+			if(player==1){
+				document.getElementById("btn2").innerText="X";
+				document.getElementById("btn2").style.backgroundColor="red";
+				player=0;
+			}
+			else if(player==0){
+				document.getElementById("btn2").innerText="O";
+				document.getElementById("btn2").style.backgroundColor="blue";
+				player=1;
+			}
+			play(player,2);
+		}
+		function action3(){
+			if(player==1){
+				document.getElementById("btn3").innerText="X";
+				document.getElementById("btn3").style.backgroundColor="red";
+				player=0;
+			}
+			else if(player==0){
+				document.getElementById("btn3").innerText="O";
+				document.getElementById("btn3").style.backgroundColor="blue";
+				player=1;
+			}
+			play(player,3);
+		}
+		function action4(){
+			if(player==1){
+				document.getElementById("btn4").innerText="X";
+				document.getElementById("btn4").style.backgroundColor="red";
+				player=0;
+			}
+			else if(player==0){
+				document.getElementById("btn4").innerText="O";
+				document.getElementById("btn4").style.backgroundColor="blue";
+				player=1;
+			}
+			play(player,4);
+		}
+		function action5(){
+			if(player==1){
+				document.getElementById("btn5").innerText="X";
+				document.getElementById("btn5").style.backgroundColor="red";
+				player=0;
+			}
+			else if(player==0){
+				document.getElementById("btn5").innerText="O";
+				document.getElementById("btn5").style.backgroundColor="blue";
+				player=1;
+			}
+			play(player,5);
+		}
+		function action6(){
+			if(player==1){
+				document.getElementById("btn6").innerText="X";
+				document.getElementById("btn6").style.backgroundColor="red";
+				player=0;
+			}
+			else if(player==0){
+				document.getElementById("btn6").innerText="O";
+				document.getElementById("btn6").style.backgroundColor="blue";
+				player=1;
+			}
+			play(player,6);
+		}
+		function action7(){
+			if(player==1){
+				document.getElementById("btn7").innerText="X";
+				document.getElementById("btn7").style.backgroundColor="red";
+				player=0;
+			}
+			else if(player==0){
+				document.getElementById("btn7").innerText="O";
+				document.getElementById("btn7").style.backgroundColor="blue";
+				player=1;
+			}
+			play(player,7);
+		}
+		function action8(){
+			if(player==1){
+				document.getElementById("btn8").innerText="X";
+				document.getElementById("btn8").style.backgroundColor="red";
+				player=0;
+			}
+			else if(player==0){
+				document.getElementById("btn8").innerText="O";
+				document.getElementById("btn8").style.backgroundColor="blue";
+				player=1;
+			}
+			play(player,8);
+		}
+		function action9(){
+			if(player==1){
+				document.getElementById("btn9").innerText="X";
+				document.getElementById("btn9").style.backgroundColor="red";
+				player=0;
+			}
+			else if(player==0){
+				document.getElementById("btn9").innerText="O";
+				document.getElementById("btn9").style.backgroundColor="blue";
+				player=1;
+			}
+			play(player,9);
+		}
+		
+		function play(ch,pos){
+			
+			
+			if(ch==0){
+				arr[pos-1]="X";
+				}
+			else if(ch==1){
+				arr[pos-1]="O";
+				}
+				
+
+			if((arr[0]=="X"||arr[0]=="O")&&(arr[1]=="X"||arr[1]=="O")&&(arr[2]=="X"||arr[2]=="O")&&(arr[3]=="X"||arr[3]=="O")&&(arr[4]=="X"||arr[4]=="O")&&(arr[5]=="X"||arr[5]=="O")&&(arr[6]=="X"||arr[6]=="O")&&(arr[7]=="X"||arr[7]=="O")&&(arr[8]=="X"||arr[8]=="O")){
+				alert("TIE");
+				location.reload();
+			}
+			else if((arr[0]==arr[1] && arr[0]==arr[2])&&(arr[0]=="X"||arr[0]=="O")){
+				if(ch==0)
+					alert("RED TEAM VICTORY");
+				else if(ch==1)
+					alert("BLUE TEAM VICTORY");
+					
+				location.reload();
+			}
+			else if((arr[0]==arr[3] && arr[0]==arr[6])&&(arr[0]=="X"||arr[0]=="O")){
+				if(ch==0)
+					alert("RED TEAM VICTORY");
+				else if(ch==1)
+					alert("BLUE TEAM VICTORY");
+					
+				location.reload();
+			}
+			else if((arr[0]==arr[4] && arr[0]==arr[8])&&(arr[0]=="X"||arr[0]=="O")){
+				if(ch==0)
+					alert("RED TEAM VICTORY");
+				else if(ch==1)
+					alert("BLUE TEAM VICTORY");
+					
+				location.reload();
+			}
+			else if((arr[1]==arr[4] && arr[1]==arr[7])&&(arr[1]=="X"||arr[1]=="O")){
+				if(ch==0)
+					alert("RED TEAM VICTORY");
+				else if(ch==1)
+					alert("BLUE TEAM VICTORY");
+					
+				location.reload();
+			}
+			else if((arr[2]==arr[5] && arr[2]==arr[8])&&(arr[2]=="X"||arr[2]=="O")){
+				if(ch==0)
+					alert("RED TEAM VICTORY");
+				else if(ch==1)
+					alert("BLUE TEAM VICTORY");
+					
+				location.reload();
+			}
+			else if((arr[2]==arr[4] && arr[2]==arr[6])&&(arr[2]=="X"||arr[2]=="O")){
+				if(ch==0)
+					alert("RED TEAM VICTORY");
+				else if(ch==1)
+					alert("BLUE TEAM VICTORY");
+					
+				location.reload();
+			}
+			else if((arr[3]==arr[4] && arr[3]==arr[5])&&(arr[3]=="X"||arr[3]=="O")){
+				if(ch==0)
+					alert("RED TEAM VICTORY");
+				else if(ch==1)
+					alert("BLUE TEAM VICTORY");
+					
+				location.reload();
+			}
+			else if((arr[6]==arr[7] && arr[6]==arr[8])&&(arr[6]=="X"||arr[6]=="O")){
+				if(ch==0)
+					alert("RED TEAM VICTORY");
+				else if(ch==1)
+					alert("BLUE TEAM VICTORY");
+					
+				location.reload();
+			}
+			else if((arr[6]==arr[4] && arr[4]==arr[2])&&(arr[6]=="X"||arr[6]=="O")){
+				if(ch==0)
+					alert("RED TEAM VICTORY");
+				else if(ch==1)
+					alert("BLUE TEAM VICTORY");
+					
+				location.reload();
+			}
+			
+		}
+		
+	</script>
+	
+	
+</body>
+</html>
